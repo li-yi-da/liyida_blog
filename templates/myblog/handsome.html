@@ -1,0 +1,912 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html class="no-js bg" lang="zh-cmn-Hans">
+<head>
+{#    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>#}
+    <meta charset="UTF-8">
+    <!--IE 8浏览器的页面渲染方式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!--默认使用极速内核：针对国内浏览器产商-->
+    <meta name="renderer" content="webkit">
+    <!--chrome Android 地址栏颜色-->
+    <meta name="theme-color" content="#3a3f51"/>
+
+{#    <meta http-equiv="x-dns-prefetch-control" content="on">#}
+
+    <title>nicheng_blog</title>
+{#    <meta name="template" content="handsome"/>#}
+{#    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ensu.cc/index.php/action/xmlrpc?rsd"/>#}
+{#    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ensu.cc/index.php/action/xmlrpc?wlw"/>#}
+{#    <link rel="alternate" type="application/rss+xml" title="代码 &raquo; ensu's blog &raquo; RSS 2.0"#}
+{#          href="https://ensu.cc/index.php/feed/category/daima/"/>#}
+{#    <link rel="alternate" type="application/rdf+xml" title="代码 &raquo; ensu's blog &raquo; RSS 1.0"#}
+{#          href="https://ensu.cc/index.php/feed/rss/category/daima/"/>#}
+{#    <link rel="alternate" type="application/atom+xml" title="代码 &raquo; ensu's blog &raquo; ATOM 1.0"#}
+{#          href="https://ensu.cc/index.php/feed/atom/category/daima/"/>#}
+    <!-- cPlayer Start -->
+{#    <script>#}
+{#        var cPlayers = [];#}
+{#        var cPlayerOptions = [];#}
+{#    </script>#}
+    <!-- cPlayer End -->
+    <!-- 第三方CDN加载CSS -->
+    {#        <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">#}
+
+
+    <!-- 本地css静态资源 -->
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="/static/handsome/hs_css1.css"/>
+    <link rel="stylesheet" href="/static/handsome/hs_css2.css"/>
+
+
+    <!--主题组件css文件加载-->
+    <link rel="stylesheet" href="/static/handsome/hs_css3.css"/>
+    <link rel="stylesheet" href="/static/handsome/hs_css4.css"/>
+    <link rel="stylesheet" href="/static/handsome/hs_css5.css"/>
+
+    <!--引入英文字体文件-->
+    <link rel="stylesheet" href="/static/handsome/font_en.css"/>
+
+    <style type="text/css">
+
+        html.bg {
+            background-image: -moz-radial-gradient(-20% 140%, ellipse, rgba(143, 192, 193, .6) 30%, rgba(255, 255, 227, 0) 50%),
+            -moz-radial-gradient(60% 40%, ellipse, #d9e3e5 10%, rgba(44, 70, 76, .0) 60%),
+            -moz-linear-gradient(-45deg, rgba(143, 181, 158, .8) -10%, rgba(213, 232, 211, .8) 80%);
+            background-image: -o-radial-gradient(-20% 140%, ellipse, rgba(143, 192, 193, .6) 30%, rgba(255, 255, 227, 0) 50%),
+            -o-radial-gradient(60% 40%, ellipse, #d9e3e5 10%, rgba(44, 70, 76, .0) 60%),
+            -o-linear-gradient(-45deg, rgba(143, 181, 158, .8) -10%, rgba(213, 232, 211, .8) 80%);
+            background-image: -ms-radial-gradient(-20% 140%, ellipse, rgba(143, 192, 193, .6) 30%, rgba(255, 255, 227, 0) 50%),
+            -ms-radial-gradient(60% 40%, ellipse, #d9e3e5 10%, rgba(44, 70, 76, .0) 60%),
+            -ms-linear-gradient(-45deg, rgba(143, 181, 158, .8) -10%, rgba(213, 232, 211, .8) 80%);
+            background-image: -webkit-radial-gradient(-20% 140%, ellipse, rgba(143, 192, 193, .6) 30%, rgba(255, 255, 227, 0) 50%),
+            -webkit-radial-gradient(60% 40%, ellipse, #d9e3e5 10%, rgba(44, 70, 76, .0) 60%),
+            -webkit-linear-gradient(-45deg, rgba(143, 181, 158, .8) -10%, rgba(213, 232, 211, .8) 80%);
+        }
+
+        .cool-transparent .off-screen + * .app-content-body {
+            background-image: -moz-radial-gradient(-20% 140%, ellipse, rgba(143, 192, 193, .6) 30%, rgba(255, 255, 227, 0) 50%),
+            -moz-radial-gradient(60% 40%, ellipse, #d9e3e5 10%, rgba(44, 70, 76, .0) 60%),
+            -moz-linear-gradient(-45deg, rgba(143, 181, 158, .8) -10%, rgba(213, 232, 211, .8) 80%);
+            background-image: -o-radial-gradient(-20% 140%, ellipse, rgba(143, 192, 193, .6) 30%, rgba(255, 255, 227, 0) 50%),
+            -o-radial-gradient(60% 40%, ellipse, #d9e3e5 10%, rgba(44, 70, 76, .0) 60%),
+            -o-linear-gradient(-45deg, rgba(143, 181, 158, .8) -10%, rgba(213, 232, 211, .8) 80%);
+            background-image: -ms-radial-gradient(-20% 140%, ellipse, rgba(143, 192, 193, .6) 30%, rgba(255, 255, 227, 0) 50%),
+            -ms-radial-gradient(60% 40%, ellipse, #d9e3e5 10%, rgba(44, 70, 76, .0) 60%),
+            -ms-linear-gradient(-45deg, rgba(143, 181, 158, .8) -10%, rgba(213, 232, 211, .8) 80%);
+            background-image: -webkit-radial-gradient(-20% 140%, ellipse, rgba(143, 192, 193, .6) 30%, rgba(255, 255, 227, 0) 50%),
+            -webkit-radial-gradient(60% 40%, ellipse, #d9e3e5 10%, rgba(44, 70, 76, .0) 60%),
+            -webkit-linear-gradient(-45deg, rgba(143, 181, 158, .8) -10%, rgba(213, 232, 211, .8) 80%);
+        }
+
+        #圆角大小可修改15px数值
+            /*首页文章版式圆角化*/
+        .panel {
+            border: none;
+            border-radius: 15px;
+        }
+
+        .panel-small {
+            border: none;
+            border-radius: 15px;
+        }
+
+        .item-thumb {
+            border-radius: 15px;
+        }
+
+        #放大的时间和大小自行修改以下数值
+            /*首页文章图片获取焦点放大*/
+        .item-thumb {
+            cursor: pointer;
+            transition: all 1.5s;
+        }
+
+        .item-thumb:hover {
+            transform: scale(1.05);
+        }
+
+        .item-thumb-small {
+            cursor: pointer;
+            transition: all 1.5s;
+        }
+
+        .item-thumb-small:hover {
+            transform: scale(1.05);
+        }
+
+        #转动快慢和头像大小自行修改数值
+            /*首页头像自动旋转*/
+        .thumb-lg {
+            width: 130px;
+        }
+
+        .avatar {
+            -webkit-transition: 1.5s;
+            -webkit-transition: -webkit-transform 1.5s ease-out;
+            transition: transform 1.5s ease-out;
+            -moz-transition: -moz-transform 1.5s ease-out;
+        }
+
+        .avatar:hover {
+            transform: rotateZ(360deg);
+            -webkit-transform: rotateZ(360deg);
+            -moz-transform: rotateZ(360deg);
+        }
+
+        #aside-user span.avatar {
+            animation-timing-function: cubic-bezier(0, 0, .07, 1) !important;
+            border: 0 solid
+        }
+
+        #aside-user span.avatar:hover {
+            transform: rotate(360deg) scale(1.2);
+            border-width: 5px;
+            animation: avatar .5s
+        }
+    </style>
+
+    <!--全站jquery-->
+{#    <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>#}
+{#    <script src="/static/jquery.js"></script>#}
+{#    <script src="/static/jquery.cookie.js"></script>#}
+{#    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>#}
+
+    <!--网站统计代码-->
+{#    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">#}
+</head>
+
+<body id="body">
+
+
+<!-- aside -->
+
+<div id="alllayout" class="app app-aside-fixed container app-header-fixed ">  <!-- headnav -->
+{#<div id="alllayout" class="app app-aside-fixed container app-header-fixed app-aside-folded ">  <!-- headnav -->#}
+    <header id="header" class="app-header navbar" role="menu">
+        <!-- navbar header（交集处） -->
+        <div class="navbar-header bg-info" style="background-color: white">
+{#            手机右↓对应顶部导航栏那一块#}
+            <button id="shouji_right" class="pull-right visible-xs dk" ui-toggle-class="show animated animated-lento fadeIn" style="background-color: unset;color: darkmagenta;"
+{#            <button class="pull-right visible-xs dk active clicked" ui-toggle-class="show animated animated-lento fadeIn"#}
+                    target=".navbar-collapse">
+                <i class="glyphicon glyphicon-th-large text-lg"></i>
+            </button>
+{#            手机左↓对应左侧#}
+            <button id="shouji_left" class="pull-left visible-xs" ui-toggle-class="off-screen animated" target=".app-aside"
+{#            <button class="pull-left visible-xs active clicked" ui-toggle-class="off-screen animated" target=".app-aside"#}
+                    ui-scroll="app">
+                <i class="glyphicon glyphicon-align-justify text-lg" style="color: darkmagenta;"></i>
+            </button>
+
+            <!-- brand -->
+            <a href="/myblog/index/" class="navbar-brand text-lt">
+                <i class="glyphicon glyphicon-home" style="color: black"></i>
+                <span class="hidden-folded m-l-xs"><span style="color: rgb(77,121,246);font-weight: bold;">昵</span><span style="color: rgb(214,59,49);font-weight: bold;">称</span><span style="color: rgb(240,182,0);font-weight: bold;">个</span><span style="color: rgb(77,121,246);font-weight: bold;">人</span><span style="color: rgb(74,161,70);font-weight: bold;">网</span><span style="color: rgb(214,59,49);font-weight: bold;">站</span></span>
+            </a>
+            <!-- / brand -->
+        </div>
+        <!-- / navbar header -->
+
+        <!-- navbar collapse（顶部导航栏） -->
+        <div id="nav_m" class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">        <!-- buttons -->
+{#        <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only show animated animated-lento fadeIn">#}
+            <div class="nav navbar-nav hidden-xs">
+                <a  id="suojin_tubiao" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
+{#                <a href="#" class="btn no-shadow navbar-btn active clicked" ui-toggle-class="app-aside-folded" target=".app">#}
+                    <i class="glyphicon glyphicon-indent-right icon-fw text " id="suojin_right" style="color: black"></i>
+                    <i class="glyphicon glyphicon-indent-left icon-fw text-active" id="suojin_left" style="color: black"></i>
+                </a>
+            </div>
+            <!-- / buttons -->
+
+
+            <!-- search form -->
+            <form id="searchform1" class="searchform navbar-form navbar-form-sm navbar-left shift" method="post"
+                  role="search">
+                <div class="form-group">
+                    <div class="input-group rounded bg-light">
+                        <input autocomplete="off" id="search_input" type="search" name="s"
+                               class="transparent rounded form-control input-sm no-border padder" required
+                               placeholder="输入关键词搜索…">
+                        <!--搜索提示-->
+                        <ul id="search_tips_drop" class="dropdown-menu hide"
+                            style="display: block;top: 30px; left: 0px;">
+                        </ul>
+                        <span id="search_submit" class="transparent input-group-btn">
+                            <button type="submit" class="transparent btn btn-sm"><i class="glyphicon glyphicon-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+
+            <a href="" style="display: none" id="searchUrl"></a>
+            <!-- / search form -->
+            <ul class="nav navbar-nav navbar-right">
+{#                <li class="music-box hidden-xs hidden-sm">#}
+{#                    <div id="skPlayer"></div>#}
+{#                </li>#}
+{#                <li class="dropdown "><a class="skPlayer-list-switch dropdown-toggle"><i#}
+{#                        class="fontello fontello-headphones"></i><span class="visible-xs-inline"></span></a></li>#}
+{#                用户名#}
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <span>{{ user_name }}</span>
+                    <span>注销</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                        <i class="glyphicon glyphicon-bell"></i>
+                        <span class="visible-xs-inline">闲言碎语</span>
+                        <span class="badge badge-sm up bg-danger pull-right-xs"></span>
+                    </a>
+                    <!-- dropdown -->
+                    <div class="dropdown-menu w-xl animated fadeInUp">
+                        <div class="panel bg-white">
+                            <div class="panel-heading b-light bg-light">
+                                <strong>闲言碎语 </strong>
+                            </div>
+                            <div class="list-group" id="smallRecording">
+                                <a href="https://ensu.cc/index.php/cross.html" class="list-group-item"><span
+                                        class="clear block m-b-none words_contents">我们对人性最大的误会，就是以为只要是人，都会有点人性和良心。-日推<br><small
+                                        class="text-muted">2018-12-22 02:04:34</small></span></a><a
+                                    href="https://ensu.cc/index.php/cross.html" class="list-group-item"><span
+                                    class="clear block m-b-none words_contents">我这一生都在错过，但是却永远不能停下来，错过不是错了，是过了。     -抖音APP热评（http://v.douyin.com/RE6CgM）<br><small
+                                    class="text-muted">2018-11-27 18:12:38</small></span></a><a
+                                    href="https://ensu.cc/index.php/cross.html" class="list-group-item"><span
+                                    class="clear block m-b-none words_contents">哪里会有人喜欢孤独，不过是不喜欢失望罢了。<br><small
+                                    class="text-muted">2018-10-24 03:34:24</small></span></a></div>
+                        </div>
+                    </div>
+                </li>
+                <!--/闲言碎语-->
+                <!--登录管理-->
+                <li class="dropdown" id="easyLogin">
+                    <a onclick="return false" data-toggle="dropdown" class="dropdown-toggle clear"
+                       data-toggle="dropdown">
+                        <span class="text">登录</span>
+                        <b class="caret"></b><!--下三角符号-->
+                    </a>
+                    <!-- dropdown(已经登录) -->
+                    <div class="dropdown-menu w-lg wrapper bg-white animated shake"
+                         aria-labelledby="navbar-login-dropdown">
+                        <form id="Login_form" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="navbar-login-user">用户名</label>
+                                <input type="text" name="name" id="navbar-login-user" class="form-control"
+                                       placeholder="用户名或电子邮箱"></div>
+                            <div class="form-group">
+                                <label for="navbar-login-password">密码</label>
+                                <input type="password" name="password" id="navbar-login-password" class="form-control"
+                                       placeholder="密码"></div>
+                            <button type="button" id="login_ajax" name="submitLogin" class="btn btn-block btn-primary">
+                                <span class="text">登录</span>
+                            </button>
+                            <input type="hidden" name="referer" value="https://ensu.cc"
+                                   data-current-url="value">
+                        </form>
+                    </div>
+                </li>
+                <!--/登录管理-->
+            </ul>
+        </div>
+        <!-- / navbar collapse -->
+    </header>
+    <!-- / headnav -->
+
+    <!--左侧边，选择侧边栏的颜色-->
+    <aside id="aside" class="app-aside hidden-xs bg-black">  <!--<aside>-->
+{#    <aside id="aside" class="app-aside hidden-xs bg-black off-screen animated">  <!--<aside>-->#}
+        <div class="aside-wrap" layout="column">
+            <div class="navi-wrap scroll-y" flex>
+                <!-- user -->
+                <div class="clearfix hidden-xs text-center hide  show" id="aside-user">
+                    <div class="dropdown wrapper">
+                        <div ui-nav>
+                            <a href="https://ensu.cc/index.php/start-page.html">
+                            <span class="thumb-lg w-auto-folded avatar m-t-sm">
+                                 <img src="/media/images/duolaiamen.jpg" class="img-full">
+                            </span>
+                            </a>
+                        </div>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded">
+                <span class="clear">
+                  <span class="block m-t-sm">
+                    <strong class="font-bold text-lt">昵称</strong>
+                    <b class="caret"></b>
+                  </span>
+                  <span class="text-muted text-xs block">我就是我</span>
+                  </span>
+                        </a>
+                        <!-- dropdown -->
+                        <ul class="dropdown-menu animated fadeInRight w hidden-folded no-padder">
+                            <li class="wrapper b-b m-b-sm bg-info m-n">
+                                <span class="arrow top hidden-folded arrow-info"></span>
+                                <div>
+                                    <p>早上好，永远年轻，永远热泪盈眶</p>
+                                </div>
+                                <div class="progress progress-xs m-b-none dker">
+                                    <div class="progress-bar bg-white" data-toggle="tooltip"
+                                         data-original-title="时间已经度过23%" style="width: 20%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- / dropdown -->
+                    </div>
+                    <div class="line dk hidden-folded"></div>
+                </div>
+                <!-- / user -->
+
+                <!-- nav -->
+                <nav ui-nav class="navi clearfix">
+                    <ul class="nav">
+                        <!--index-->
+                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <span>导航</span>
+                        </li>
+                        <!--主页-->
+                        <li><a href="#" class="auto">
+                            <i class="glyphicon glyphicon-home"></i><span>首页</span></a>
+                        </li>
+                        <!-- /主页 -->
+                        {% for i in classify_m %}
+                        <li>
+                            <a target="_self" href="" class="auto">
+                            <i class="glyphicon glyphicon-list"></i><span>{{ i.classify }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+{#                        <li><a target="_self" href="#" class="auto">#}
+{#                            <i class="glyphicon glyphicon-gift"></i><span>敬请期待</span></a></li>#}
+                    </ul>
+                </nav>
+                <!-- nav -->
+            </div>
+            <!--end of .navi-wrap-->
+            <!--left_footer-->
+            <div id="left_footer" class="footer wrapper-xs text-center nav-xs lt">
+
+                <div class="col-xs-4 footer-stats">
+                    <a target="_blank" class="tinav" href="#" title="" data-toggle="tooltip"
+                       data-placement="top" data-original-title="后台管理">
+                        <span class="block"><i class="glyphicon glyphicon-cog"></i></span>
+                        <small class="text-muted">管理</small>
+                    </a>
+                </div>
+                <div class="col-xs-4 footer-stats">
+                    <a target="_blank" class="tinav" href="#" title=""
+                       data-toggle="tooltip" data-placement="top" data-original-title="文章RSS地址">
+                        <span class="block"><i class="glyphicon glyphicon-book"></i></span>
+                        <small class="text-muted">文章</small>
+                    </a>
+                </div>
+                <div class="col-xs-4 footer-stats">
+                    <a target="_blank" href="#" title="" data-toggle="tooltip"
+                       data-placement="top" data-original-title="评论RSS地址">
+                        <span class="block"><i class="glyphicon glyphicon-comment"></i></span>
+                        <small class="text-muted">评论</small>
+                    </a>
+                </div>
+            </div>
+
+        </div><!--.aside-wrap-->
+    </aside>
+    <!-- content -->
+    <div id="content" class="app-content">
+        <!--loading animate-->
+        <div id="loading" class="butterbar active hide">
+            <span class="bar"></span>
+        </div>    <!-- / aside -->
+
+        <a class="off-screen-toggle hide"></a>
+        <main class="app-content-body ">
+            <div class="hbox hbox-auto-xs hbox-auto-sm">
+{#                正文#}
+                <div class="col center-part">
+                    <header class="bg-light lter b-b wrapper-md">
+                        <h1 class="m-n font-thin h3 text-black l-h">nicheng_blog</h1>
+                        <small class="text-muted letterspacing indexWords">想做快乐的哲学家</small>
+                    </header>
+                    <div class="wrapper-md" id="post-panel">
+                        <ol class="breadcrumb bg-white b-a" itemscope="">
+                            <li>
+                                <a href="https://ensu.cc/" itemprop="breadcrumb" title="返回首页" data-toggle="tooltip">
+                                <i class="glyphicon glyphicon-home" aria-hidden="true"></i>&nbsp;首页</a>
+                            </li>
+                            <li class="active">代码</li>
+                        </ol>                   <!-- 输出文章 TODO:整合该部分代码-->
+{#                        文章板块#}
+                        <div class="blog-post">
+                            {% for i in page_fen %}
+                            <div class="panel">
+                                <div class="index-post-img">
+                                    <a href="#">
+                                        <div class="item-thumb lazy"
+{#                                             style="background-image: url(https://yantuz.cn/mmPic/)">#}
+                                             style="background-image: url(/media/images/0cd3b0552956b937acb598c3fdfd38eaeb1e68b9176a1-TbEvGB_fw658_20190312175138_783.jpg)">
+                                        </div>
+
+                                    </a>
+                                </div>
+                                <div class="post-meta wrapper-lg">
+{#                                    标题#}
+                                    <h2 class="m-t-none index-post-title"><a
+                                            href="/myblog/detail-{{ i.id }}/">{{ i.title }}</a></h2>
+{#                                    简介#}
+                                    <p class="summary l-h-2x text-muted">{{ i.introduce }}</p>
+{#                                    横格线↓#}
+                                    <div class="line line-lg b-b b-light"></div>
+                                    <div class="text-muted post-item-foot-icon">
+                                        <i class="glyphicon glyphicon-user"></i><span class="m-r-sm">&nbsp;<a href="https://ensu.cc/index.php/author/1/">昵称&nbsp;</a></span>
+                                        <i class="glyphicon glyphicon-time"></i><span class="m-r-sm">&nbsp;{{ i.addtime|date:"Y-m-d" }}</span>
+                                        <a href="https://ensu.cc/index.php/archives/443/#comments" class="m-l-sm post-item-comment"><i class="glyphicon glyphicon-comment"></i>&nbsp;暂无评论</a>
+                                    </div>
+                                    <!--text-muted-->
+                                </div><!--post-meta wrapper-lg-->
+                            </div><!--panel/panel-small-->
+                            {% endfor %}
+                        </div>
+                        <!--分页 按钮-->
+                        <nav class="text-center m-t-lg m-b-lg" role="navigation">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination" style="margin: 0">
+                                    <li>
+                                        <a href="/myblog/index/?p={{ previous_page }}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        {% for i in p_b %}
+                                        <span style="color: #00a0e9">{{ i }}</span>
+                                        {% endfor %}
+                                    </li>
+                                    <li>
+                                        <a href="/myblog/index/?p={{ next_page }}" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <form id="page_form" action="/myblog/index/" method="get">
+
+                                <div style="width: 150px;margin: 0 auto;display: table;position: relative">
+                                    <input id="page_input" type="text" class="form-control" name="p" placeholder="共{{ c }}页">
+                                    <span class="input-group-btn">
+                                    <button id="page_submit" class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                                    <span id="page_err" style="color: blue;position: absolute;display: inherit;line-height: 35px;"></span>
+                                </div>
+                            </form>
+                        </nav>
+                        <style>
+                            .page-navigator > li > a, .page-navigator > li > span {
+                                line-height: 1.42857143;
+                                padding: 6px 12px;
+                            }
+                        </style>
+                    </div>
+                </div>
+                <!-- 右侧栏-->
+                <aside class="asideBar col w-md bg-white-only b-l bg-auto no-border-xs" role="complementary">
+                    <div id="sidebar">
+                        <section id="tabs-4" class="widget widget_tabs clear">
+                            <div class="nav-tabs-alt no-js-hide">
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li class="active" role="presentation">
+                                        <a href="#widget-tabs-4-hots" role="tab" aria-controls="widget-tabs-4-hots" aria-expanded="true" data-toggle="tab">
+                                            <i class="glyphicon glyphicon-fire text-md text-muted wrapper-sm" aria-hidden="true"></i>
+                                            <span class="sr-only">热门文章</span>
+                                        </a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#widget-tabs-4-comments" role="tab" aria-controls="widget-tabs-4-comments" aria-expanded="false" data-toggle="tab">
+                                            <i class="glyphicon glyphicon-comment text-md text-muted wrapper-sm" aria-hidden="true"></i>
+                                            <span class="sr-only">最新评论</span>
+                                        </a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#widget-tabs-4-random" role="tab" aria-controls="widget-tabs-4-random" aria-expanded="false" data-toggle="tab">
+                                            <i class="glyphicon glyphicon-transfer text-md text-muted wrapper-sm" aria-hidden="true"></i>
+                                            <span class="sr-only">随机文章</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <!--热门文章-->
+                                <div id="widget-tabs-4-hots" class="tab-pane  fade in wrapper-md active" role="tabpanel">
+                                    <h3 class="widget-title m-t-none text-md">热门文章</h3>
+                                    <ul class="list-group no-bg no-borders pull-in m-b-none">
+                                        <li class="list-group-item">
+                                            <a href="https://ensu.cc/index.php/archives/262/" class="pull-left thumb-sm m-r">
+                                                <img style="height: 40px!important;width: 40px!important;" src="https://ensu.cc/usr/themes/handsome/usr/img/sj2/2.jpg" class="img-circle">
+                                            </a>
+                                            <div class="clear">
+                                                <h4 class="h5 l-h">
+                                                    <a href="https://ensu.cc/index.php/archives/262/" title="免费申请中国移动CMLink英国电话卡及破解最小充值限制">免费申请中国移动CMLink英国电话卡及破解最小充值限制 </a>
+                                                </h4>
+                                                <small class="text-muted post-head-icon">
+                                                    <span class="meta-views">
+                                                        <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>
+                                                        <span class="sr-only">评论数：</span>
+                                                        <span class="meta-value">5</span>
+                                                    </span>
+                                                </small>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--最新评论-->
+                                <div id="widget-tabs-4-comments" class="tab-pane fade wrapper-md no-js-show"
+                                     role="tabpanel">
+                                    <h3 class="widget-title m-t-none text-md">最新评论</h3>
+                                    <ul class="list-group no-borders pull-in auto m-b-none no-bg">
+                                        <li class="list-group-item">
+                                            <a href="https://ensu.cc/index.php/archives/262/comment-page-1#comment-41" class="pull-left thumb-sm avatar m-r">
+                                                <img nogallery src="https://secure.gravatar.com/avatar/2fe9b0ae4ac26dcab28d534e43774b2a?s=65&r=G&d=" class="avatar-40 photo img-circle" style="height:40px!important; width: 40px!important;">
+                                            </a>
+                                            <a href="https://ensu.cc/index.php/archives/262/comment-page-1#comment-41" class="text-muted">
+                                                <!--<i class="iconfont icon-comments-o text-muted pull-right m-t-sm text-sm" title="" aria-hidden="true" data-toggle="tooltip" data-placement="auto left"></i>
+                                                <span class="sr-only"></span>-->
+                                            </a>
+                                            <div class="clear">
+                                                <div class="text-ellipsis">
+                                                    <a href="https://ensu.cc/index.php/archives/262/comment-page-1#comment-41" title="Nyarime"> Nyarime </a>
+                                                </div>
+                                                <small class="text-muted">
+                                                    <span>最小充值也需要0.1吧</span>
+                                                </small>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--随机文章-->
+                                <div id="widget-tabs-4-random" class="tab-pane fade wrapper-md no-js-show"
+                                     role="tabpanel">
+                                    <h3 class="widget-title m-t-none text-md">随机文章</h3>
+                                    <ul class="list-group no-bg no-borders pull-in">
+                                        <li class="list-group-item">
+                                            <a href="https://ensu.cc/index.php/archives/316/" class="pull-left thumb-sm m-r">
+                                                <img style="height: 40px!important;width: 40px!important;" src="https://ensu.cc/usr/themes/handsome/usr/img/sj2/2.jpg" class="img-circle">
+                                            </a>
+                                            <div class="clear">
+                                                <h4 class="h5 l-h">
+                                                    <a href="https://ensu.cc/index.php/archives/316/" title="高质量视频压缩工具 - 小丸工具箱"> 高质量视频压缩工具 - 小丸工具箱 </a>
+                                                </h4>
+                                                <small class="text-muted post-head-icon">
+                                                    <span class="meta-views">
+                                                        <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>
+                                                        <span class="sr-only">评论数：</span>
+                                                        <span class="meta-value">0</span>
+                                                    </span>
+                                                </small>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <!--博客信息-->
+                        <section id="categories-2" class="widget widget_categories wrapper-md clear">
+                            <h3 class="widget-title m-t-none text-md">博客信息</h3>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <i class="glyphicon glyphicon-file text-muted"></i>
+                                    <span class="badgepull-right">179</span>文章数目
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="glyphicon glyphicon-comment text-muted"></i>
+                                    <span class="badgepull-right">29</span>评论数目
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="glyphicon glyphicon-equalizer text-muted"></i>
+                                    <span class="badgepull-right">253天</span>运行天数
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="glyphicon glyphicon-refresh text-muted"></i>
+                                    <span class="badgepull-right">2 星期前</span>最后更新
+                                </li>
+                            </ul>
+                        </section>
+                        <!--在文章页面输出目录，在其他页面输出标签云-->
+                        <section id="tag_cloud-2" class="widget widget_tag_cloud wrapper-md clear">
+                            <h3 class="widget-title m-t-none text-md">标签云</h3>
+                            <div class="tags l-h-2x">
+                                {% for i in label_m %}
+                                <a href="" class="label bg-info"
+                                   title="该标签下有 78 篇文章" data-toggle="tooltip">{{ i.label }}</a>
+                                {% endfor %}
+                            </div>
+                        </section>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <!-- footer -->
+    </div><!-- /content -->
+    <footer id="footer" class="app-footer" role="footer">
+        <div class="topButton panel panel-default">
+            <button id="goToTop" class="btn btn-default no-shadow pos-abt hide">
+                <i class="glyphicon glyphicon-eject" aria-hidden="true"></i>
+            </button>
+        </div>
+    </footer>
+</div><!--end of .app app-header-fixed-->
+
+{#<link rel="stylesheet" href="https://ensu.cc/usr/plugins/EditorMD/css/emojify.min.css"/>#}
+{#<script type="text/javascript">#}
+{#    window.jQuery || document.write(unescape('%3Cscript%20type%3D%22text/javascript%22%20src%3D%22https://ensu.cc/usr/plugins/EditorMD/lib/jquery.min.js%22%3E%3C/script%3E'));#}
+{#</script>#}
+{#<script src="https://ensu.cc/usr/plugins/EditorMD/js/emojify.min.js"></script>#}
+{#<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>#}
+{#<script src="/static/jquery.cookie.js"></script>#}
+<script src="/static/jquery.js"></script>
+<script src="/static/jquery.cookie.js"></script>
+<script src="/static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script>
+    $(function () {
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                xhr.setRequestHeader('X-CSRFtoken', $.cookie('csrftoken'))
+            }
+        })
+    })
+
+    $('#login_ajax').click(function () {
+        $.ajax({
+            url: '/myblog/login_ajax/',
+            type: 'POST',
+            data: {'user': $('#navbar-login-user').val(), 'password': $('#navbar-login-password').val(),},
+            headers: {'X-CSRFtoken': $.cookie('csrftoken')},
+            success: function (data) {
+                var obj = JSON.parse(data);
+                if (obj.alt) {
+                    location.reload()
+                }
+                else {
+                    alert('no')
+                    $('#error').text(obj.errormes)
+                }
+            }
+
+
+        })
+    })
+</script>
+<script>
+    $('#suojin_right').click(function () {
+        $('#alllayout').addClass('app-aside-folded')
+        $('#suojin_tubiao').addClass('active clicked')
+    })
+    $('#suojin_left').click(function () {
+        $('#alllayout').removeClass('app-aside-folded')
+        $('#suojin_tubiao').removeClass('active clicked')
+    })
+</script>
+<script>
+    $('#shouji_left').click(function () {
+        if ($('#aside').hasClass('off-screen animated')) {
+            $('#aside').removeClass('off-screen animated');
+        }
+        else {
+            $('#aside').addClass('off-screen animated')
+        }
+        })
+    $('#shouji_right').click(function () {
+        if ($('#nav_m').hasClass('show animated animated-lento fadeIn')) {
+            $('#nav_m').removeClass('show animated animated-lento fadeIn');
+        }
+        else {
+            $('#nav_m').addClass('show animated animated-lento fadeIn')
+        }
+        })
+</script>
+{#<script type="text/javascript">#}
+{#    $(function () {#}
+{#        emojify.setConfig({#}
+{#            img_dir: 'https:' == document.location.protocol ? "https://staticfile.qnssl.com/emoji-cheat-sheet/1.0.0" : "http://cdn.staticfile.org/emoji-cheat-sheet/1.0.0",#}
+{#            blacklist: {#}
+{#                'ids': [],#}
+{#                'classes': ['no-emojify'],#}
+{#                'elements': ['^script$', '^textarea$', '^pre$', '^code$']#}
+{#            },#}
+{#        });#}
+{#        emojify.run();#}
+{#    });#}
+{#</script>#}
+{#<!-- cPlayer Start -->#}
+{#<script async>#}
+{#    "use strict";#}
+{#    (function () {#}
+{#        var cp = function () {#}
+{#            var len = cPlayerOptions.length;#}
+{#            for (var i = 0; i < len; i++) {#}
+{#                var element = document.getElementById('player' + cPlayerOptions[i]['id'])#}
+{#                while (element.hasChildNodes()) {#}
+{#                    element.removeChild(element.firstChild);#}
+{#                }#}
+{#                ;#}
+{#                cPlayers[i] = new cPlayer({#}
+{#                    element: element,#}
+{#                    list: cPlayerOptions[i]['list'],#}
+{#                });#}
+{#                cPlayers[i].music.autoplay = cPlayerOptions[i]['autoplay'] || false;#}
+{#            }#}
+{#            ;#}
+{#            cPlayers = [];#}
+{#            cPlayerOptions = [];#}
+{#        };#}
+{#        var script = document.createElement('script');#}
+{#        script.type = "text/javascript";#}
+{#        script.src = "https://ensu.cc/usr/plugins/cPlayer/assets/dist/cplayer.js?v=1.2.12";#}
+{#        script.async = true;#}
+{#        script.crossOrigin = "anonymous";#}
+{#        script.integrity = "sha256-DfhgVlsA1ZGGnu67H8m4gS6sKim08dZwCO51NqiW54Q=";#}
+{#        if (script.readyState) {  //IE#}
+{#            script.onreadystatechange = function () {#}
+{#                if (script.readyState == "loaded" ||#}
+{#                    script.readyState == "complete") {#}
+{#                    script.onreadystatechange = null;#}
+{#                    cp();#}
+{#                }#}
+{#            };#}
+{#        } else {  //Others#}
+{#            script.onload = function () {#}
+{#                cp();#}
+{#            };#}
+{#        }#}
+{#        document.head.appendChild(script);#}
+{#    })();#}
+{#</script>#}
+{#<!-- cPlayer End -->#}
+{#<!--定义全局变量-->#}
+{#<script type="text/javascript">#}
+{#    window['LocalConst'] = {#}
+{#        COMMENT_NAME_INFO: '必须填写昵称或姓名',#}
+{#        COMMENT_EMAIL_INFO: '必须填写电子邮箱地址',#}
+{#        COMMENT_EMAIL_LEGAL_INFO: '邮箱地址不合法',#}
+{#        COMMENT_CONTENT_INFO: '必须填写评论内容',#}
+{#        COMMENT_SUBMIT_ERROR: '提交失败，请重试！',#}
+{#        COMMENT_CONTENT_LEGAL_INFO: '提交失败,您的输入内容不符合规则！',#}
+{##}
+{#        LOGIN_USERNAME_INFO: '必须填写用户名',#}
+{#        LOGIN_PASSWORD_INFO: '请填写密码',#}
+{#        LOGIN_SUBMIT_ERROR: '登录失败，请重新登录',#}
+{#        LOGIN_SUBMIT_INFO: '用户名或者密码错误，请重试',#}
+{#        LOGIN_SUBMIT_SUCCESS: '登录成功',#}
+{#        CLICK_TO_REFRESH: '点击以刷新页面',#}
+{#        LOGOUT_SUCCESS_REFRESH: '退出成功，正在刷新当前页面',#}
+{##}
+{#        LOGOUT_ERROR: '退出失败，请重试',#}
+{#        LOGOUT_SUCCESS: '退出成功',#}
+{##}
+{#        SUBMIT_PASSWORD_INFO: '密码错误，请重试',#}
+{#        COMMENT_TITLE: '评论通知',#}
+{#        LOGIN_TITLE: '登录通知',#}
+{#        ChANGYAN_APP_KEY: '',#}
+{#        CHANGYAN_CONF: '',#}
+{##}
+{#        COMMENT_SYSTEM: '0',#}
+{#        COMMENT_SYSTEM_ROOT: '0',#}
+{#        COMMENT_SYSTEM_CHANGYAN: '1',#}
+{#        COMMENT_SYSTEM_OTHERS: '2',#}
+{#        EMOJI: '表情',#}
+{#        IS_PJAX: '1',#}
+{#        IS_PAJX_COMMENT: '1',#}
+{#        BASE_SCRIPT_URL: 'https://ensu.cc/usr/themes/handsome/',#}
+{#        BLOG_URL: 'https://ensu.cc',#}
+{#        THEME_COLOR: '4',#}
+{#        THEME_HEADER_FIX: '1',#}
+{#        THEME_ASIDE_FIX: '1',#}
+{#        THEME_ASIDE_FOLDED: '',#}
+{#        THEME_ASIDE_DOCK: '',#}
+{#        THEME_CONTAINER_BOX: '1',#}
+{#        THEME_HIGHLIGHT_CODE: '1',#}
+{#        THEME_TOC: '1',#}
+{#        TOC_TITLE: '文章目录',#}
+{#        HEADER_FIX: '固定头部',#}
+{#        ASIDE_FIX: '固定导航',#}
+{#        ASIDE_FOLDED: '折叠导航',#}
+{#        ASIDE_DOCK: '置顶导航',#}
+{#        CONTAINER_BOX: '盒子模型',#}
+{#        OFF_SCROLL_HEIGHT: '50',#}
+{#        COMMENT_REJECT_PLACEHOLDER: '居然什么也不说，哼',#}
+{#        COMMENT_PLACEHOLDER: '说点什么吧……',#}
+{#        SHOW_SETTING_BUTTON: '',#}
+{#        THEME_VERSION: '5.0.020181231301',#}
+{##}
+{#        OPERATION_NOTICE: '操作通知',#}
+{#        SCREENSHOT_BEGIN: '正在生成当前页面截图……',#}
+{#        SCREENSHOT_NOTICE: '点击顶部下载按钮保存当前卡片',#}
+{#        SCREENSHORT_ERROR: '由于图片跨域原因导致截图失败',#}
+{#        SCREENSHORT_SUCCESS: '截图成功',#}
+{#        MUSIC_NOTICE: '播放通知',#}
+{#        MUSIC_FAILE: '当前音乐地址无效，自动为您播放下一首',#}
+{#        MUSIC_FAILE_END: '当前音乐地址无效',#}
+{#        MUSIC_LIST_SUCCESS: '歌单歌曲加载成功',#}
+{#        CDN_NAME: ''#}
+{#    };#}
+{##}
+{#</script>#}
+{##}
+{##}
+{#<!--CDN加载-->#}
+{#<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+{##}
+{##}
+{##}
+{#<script src="https://ensu.cc/usr/themes/handsome/assets/js/features/jquery.pjax.min.js" type="text/javascript"></script>#}
+{#<script>#}
+{#    $(document).pjax('a[href^="https://ensu.cc/"]:not(a[target="_blank"], a[no-pjax])', {#}
+{#        container: '#content',#}
+{#        fragment: '#content',#}
+{#        timeout: 8000#}
+{#    }).on('pjax:send', function () {#}
+{#        $('#loading').removeClass('hide');#}
+{#    }).on('pjax:click', function () {#}
+{##}
+{#        window['Page'].doPJAXClickAction();#}
+{##}
+{#        $('body,html').animate({scrollTop: 0}, 500);#}
+{##}
+{##}
+{#    }).on('pjax:complete', function () {#}
+{#        window['Page'].doPJAXCompleteAction();#}
+{##}
+{##}
+{#        $('#loading').addClass('hide');#}
+{##}
+{##}
+{#    })#}
+{#</script>#}
+{##}
+{##}
+{#<!--主题组件js加载-->#}
+{##}
+{#<!--平滑滚动组件-->#}
+{#<script src="https://ensu.cc/usr/themes/handsome/assets/js/features/SmoothScroll.min.js"></script>#}
+{##}
+{#<!--pjax动画组件-->#}
+{##}
+{##}
+{#<!--lightgallery必备组件-->#}
+{#<script src="https://ensu.cc/usr/themes/handsome/assets/js/features/jquery.fancybox.min.js?v=5.0.020181231301"></script>#}
+{##}
+{#<!--component/comments.php 页面必需js（只有选择了原生评论的时候才会加载）-->#}
+{#<script src="https://ensu.cc/usr/themes/handsome/assets/js/features/OwO.min.js?v=5.0.020181231301"></script>#}
+{#<!--component/comments.php 必需js结束-->#}
+{##}
+{##}
+{#<!--截图插件-->#}
+{#<script src="https://ensu.cc/usr/themes/handsome/assets/js/features/html2canvas.min.js"></script>#}
+{#<!--主题组件js加载结束-->#}
+{##}
+{#<!--主题核心js-->#}
+{#<script src="https://ensu.cc/usr/themes/handsome/assets/js/function.min.js?v=5.0.020181231301"></script>#}
+{#<script src="https://ensu.cc/usr/themes/handsome/assets/js/core.min.js?v=5.0.020181231301"></script>#}
+{##}
+{##}
+{#<!--全局播放器组件-->#}
+{#<script src="https://ensu.cc/usr/themes/handsome/assets/js/music.min.js?v=5.0.020181231301"></script>#}
+{#<script>#}
+{#    var player = new skPlayer({#}
+{#        "autoplay": false,#}
+{#        "listshow": false,#}
+{#        "mode": "listloop",#}
+{#        "music": {"type": "cloud", "source": "2462450298", "media": "netease"}#}
+{#    });#}
+{#</script>#}
+{##}
+{##}
+{#<script type="text/javascript">#}
+{#</script>#}
+
+
+</body>
+</html><!--html end-->
+<!-- / footer -->

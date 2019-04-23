@@ -1,0 +1,15 @@
+{#extends必须在load上面#}
+{% extends 'master.html' %}
+{% load zidingyi %}
+{% block css %}
+{% endblock %}
+
+
+{% block body %}
+        <div>t1</div>
+        {% moban 3 5 %}
+        <div>dsadasdasd</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

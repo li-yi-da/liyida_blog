@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/media/images/_DYW7D440C%7BLYV%60%5BA@%7D7Q0V.png">
+    <title>昵称个人网站</title>
+    {% block head %}
+    {% endblock %}
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+    <style>
+        .head_m{
+            height: 68px;
+            text-align: center;
+            position: fixed;
+            left: 10%;
+            top: 0px;
+            right: 10%;
+            z-index: 10;
+            background-color: white;
+            {#background-color: #bbbbbb;#}
+
+        }
+
+        .head_m .head_1{
+            height: 68px;
+            line-height: 68px;
+            font-size: 30px;
+            {#background-color: #1b6d85;#}
+        }
+
+        .head_m .head_2{
+            position: fixed;
+            left: 25%;
+            right: 25%;
+            font-size: 25px;
+            height: 68px;
+            line-height: 68px;
+            {#background-color: #2b542c;#}
+        }
+
+        .head_m .head_3 {
+            height: 68px;
+            line-height: 68px;
+            font-size: 25px;
+            color: rgb(74, 161, 70);
+            cursor: pointer;
+
+        }
+
+        .head_m .head_4{
+            height: 68px;
+            line-height: 68px;
+            font-size: 25px;
+            padding-right: 30px;
+        }
+
+        .body_m {
+            position: fixed;
+            width: 920px;
+            top: 73px;
+            left: 50%;
+            bottom: 0px;
+            margin-left: -460px;
+            overflow: auto;
+        }
+
+        .body_left{
+            width: 220px;
+            position: fixed;
+            top: inherit;
+            bottom: 0px;
+            overflow: auto;
+        }
+
+        .body_left .body_left_1{
+            width: 180px;
+            margin: 20px auto;
+            text-align: center;
+            border-top: 1px solid rgb(214,59,49);
+            {#background-color: white;#}
+        }
+        .body_left .body_left_1 .body_left_1_classify{
+            background-color: #bbbbbb;
+            border-radius: 10px;
+            margin: 10px 20px;
+            padding: 5px 0;
+            color: rgb(77,121,246);
+        }
+
+        .body_left .body_left_2 {
+            width: 180px;
+            margin: 20px auto;
+            text-align: center;
+            border-top: 1px solid rgb(214, 59, 49);
+        }
+
+        .body_left .body_left_2 .body_left_2_classify{
+            background-color: #bbbbbb;
+            border-radius: 10px;
+            margin: 10px 20px;
+            padding: 5px 0;
+            color: rgb(77,121,246);
+        }
+
+        .body_right{
+            width: 690px;
+            margin-left: 230px;
+            {#background-color: #dddddd;#}
+        }
+
+        .left_m{
+            float: left;
+        }
+        .right_m{
+            float: right;
+        }
+
+        a:hover{
+            text-decoration:none;/* 指正在点的链接*/
+        }
+
+        .hi {
+            display: none;
+        }
+
+        a{
+            color: unset;
+        }
+
+        h4{
+            text-align: center;
+        }
+
+        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+            vertical-align: unset;
+        }
+    </style>
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    <div class="head_m">
+        <div class="left_m head_1" >
+            <span style="color: rgb(77,121,246);font-weight: bold;">昵</span>
+            <span style="color: rgb(214,59,49);margin-left: -6px;font-weight: bold;">称</span>
+            <span style="color: rgb(240,182,0);margin-left: -6px;font-weight: bold;">个</span>
+            <span style="color: rgb(77,121,246);margin-left: -6px;font-weight: bold;">人</span>
+            <span style="color: rgb(74,161,70);margin-left: -6px;font-weight: bold;">网</span>
+            <span style="color: rgb(214,59,49);margin-left: -6px;font-weight: bold;">站</span>
+        </div>
+
+        <div class="right_m head_2">
+            <span style="padding: 0px 30px;color: rgb(77,121,246)"><a href="/myblog/index/">首页</a></span>
+            <span style="padding: 0px 30px;color: rgb(74,161,70)"><a href="/myblog/create/">写博客</a></span>
+            <span style="padding: 0px 30px;color: rgb(77,121,246)"><a href="/myblog/admin/">管理</a></span>
+        </div>
+
+        <div class="head_3 right_m">
+        <span id="logout"><a href="/myblog/logout/">注销</a></span>
+        </div>
+
+        <div class="head_4 right_m">
+            <span class="glyphicon glyphicon-user"></span><span style="color: rgb(77,121,246);padding-left: 10px">{{ user_name }}</span>
+        </div>
+    </div>
+
+    <div class="body_m">
+    <div class="body_left left_m">
+        <div class="body_left_1">
+            <h4 id="classify" style="cursor: pointer">分类<span class="glyphicon glyphicon-triangle-bottom" id="classify_bottom"></span><span class="glyphicon glyphicon-triangle-right hi" id="classify_right"></span></h4>
+            <div >
+                <a href="/myblog/admin/"><div class="body_left_1_classify" >全部</div></a>
+                {% for i in classify_m %}
+                    <a href="/myblog/classify_admin-{{ i.id }}/">
+                    <div class="body_left_1_classify" >{{ i.classify }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="body_left_2">
+            <h4 id="label" style="cursor: pointer">标签<span class="glyphicon glyphicon-triangle-bottom" id="label_bottom"></span><span class="glyphicon glyphicon-triangle-right hi" id="label_right"></span></h4>
+            <div >
+                <a href="/myblog/admin/">
+                    <div class="body_left_2_classify">全部</div>
+                </a>
+                {% for i in label_m %}
+                    <a href="/myblog/label_admin-{{ i.id }}/">
+                    <div class="body_left_2_classify">{{ i.label }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="body_right left_m">
+
+        {% block body %}
+        {% endblock %}
+
+    </div>
+    </div>
+    <div class="foot_m">
+
+    </div>
+
+
+    <script src="/static/jquery.js"></script>
+    <script src="/static/jquery.cookie.js"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script>
+        $('#classify').click(function () {
+        if ($('#classify').next().hasClass('hi')) {
+            $('#classify').next().removeClass('hi')
+            $('#classify_bottom').removeClass('hi')
+            $('#classify_right').addClass('hi')
+        }
+        else {
+            $('#classify').next().addClass('hi')
+            $('#classify_bottom').addClass('hi')
+            $('#classify_right').removeClass('hi')
+        }
+    })
+
+    $('#label').click(function () {
+        if ($('#label').next().hasClass('hi')) {
+            $('#label').next().removeClass('hi')
+            $('#label_bottom').removeClass('hi')
+            $('#label_right').addClass('hi')
+        }
+        else {
+            $('#label').next().addClass('hi')
+            $('#label_bottom').addClass('hi')
+            $('#label_right').removeClass('hi')
+        }
+    })
+    </script>
+    {% block js %}
+    {% endblock %}
+</body>
+</html>

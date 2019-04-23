@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1px" style="border-collapse: collapse ">
+        <tr>  <td>地区群</td> <td>用户</td>  </tr>
+        {% for i in diqu_list %}
+        <tr>
+            <td>{{ i.userdiqu }}</td>
+            <td>
+            {% for i2 in i.b.all %}
+                <span>{{ i2.username }}</span>
+            {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

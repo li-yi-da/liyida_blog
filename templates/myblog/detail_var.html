@@ -1,0 +1,64 @@
+{% extends 'myblog/master.html' %}
+
+{% block head %}
+{% endblock %}
+{% block css %}
+    <style>
+        .body_right_1{
+            width: 650px;
+            margin: 20px auto;
+            border-top: 1px solid rgb(214,59,49);
+            border-left: 5px solid #dddddddd;
+            background-color: #dddddddd;
+            border-right: 5px solid #dddddddd;
+            border-bottom: 1px solid #dddddddd
+            {#position: absolute;#}
+            {#top: 0px;#}
+            {#bottom: 0px;#}
+        }
+        .body_right_1_cont{
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .body_right_1_cont_1{
+            padding: 0 5px;
+        }
+        .body_right_1_cont_2{
+
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="body_right_1">
+        <h4>全部文章</h4>
+        <div class="body_right_1_cont">
+            <h4>{{ article_nid.title }}</h4>
+        </div>
+
+        <div class="body_right_1_cont">
+            <div class="body_right_1_cont_1">
+                <div><span>简介：{{ article_nid.introduce }}</span> <span class="right_m">{{ article_nid.addtime|date:"Y-m-d" }}</span></div>
+            </div>
+        </div>
+
+        <div class="body_right_1_cont">
+            <div class="body_right_1_cont_1">
+                {% autoescape off %}
+                {{ article_nid.content }}
+                {% endautoescape %}
+            </div>
+        </div>
+{#        <div class="body_right_1_cont">#}
+{#            <div class="body_right_1_cont_1"><textarea>{{ article_nid.content }}</textarea></div>#}
+{#        </div>#}
+
+    {#    <div style="height: 2000px"></div>#}
+    </div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
