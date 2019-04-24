@@ -25,7 +25,7 @@ SECRET_KEY = '^z$11%5(f#ktdyg^8c3qtkn_-rt73h7aoqaqdh=0jvx@_yh1zl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -144,7 +144,7 @@ STATICFILES_DIRS = (
     # os.path.join(BASE_DIR,'media'),
 )
 
-
+STATIC_ROOT = 'all_static_files'
 
 import sys
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
