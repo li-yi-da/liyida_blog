@@ -32,9 +32,9 @@ class Page():
         p_b_s = []  # 分页列表
         for i in range(1, self.c + 1):
             if i == self.p:
-                item = '<a href="/myblog/%s/?p=%s" style="color: red">第%s页</a>' % (self.d, i, i)
+                item = '<a href="/myblog/%s/?p=%s" style="color: red">%s</a>' % (self.d, i, i)
             else:
-                item = '<a href="/myblog/%s/?p=%s">第%s页</a>' % (self.d, i, i)
+                item = '<a href="/myblog/%s/?p=%s">%s</a>' % (self.d, i, i)
             item = mark_safe(item)  # 把item变成被前端承认的合法字符
             p_b_s.append(item)
         if 1 <= self.p <= self.c:
