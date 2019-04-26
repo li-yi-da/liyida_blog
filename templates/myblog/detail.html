@@ -51,7 +51,7 @@
                 <div class="text-muted post-item-foot-icon">
                     <i class="glyphicon glyphicon-user"></i><span class="m-r-sm">&nbsp;<a href="/myblog/index/">昵称&nbsp;</a></span>
                     <i class="glyphicon glyphicon-time"></i><span class="m-r-sm">&nbsp;{{ article_nid.addtime|date:"Y-m-d" }}</span>
-                    <a href="https://ensu.cc/index.php/archives/443/#comments" class="m-l-sm post-item-comment"><i class="glyphicon glyphicon-comment"></i>&nbsp;暂无评论</a>
+                    <i class="glyphicon glyphicon-eye-open"></i><span class="m-r-sm">&nbsp;{{ article_nid.liulangliang }}&nbsp浏览量</span>
                 </div>
                 <!--text-muted-->
             </div><!--post-meta wrapper-lg-->
@@ -64,10 +64,20 @@
             }
         </style>
     </div>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <label for="pinglun_name">你的名字</label>
+            <input type="text" name="pinglun_name" id="pinglun_name" />
+            <label for="pinglun_cont">你想说点啥</label>
+            <input type="text" name="pinglun_cont" id="pinglun_cont" />
+            <button id="pinglun_tijiao" type="button">发表</button>
+        </form>
+    </div>
 {% endblock %}
 
 
-{% block pinglin %}
+{% block pinglun %}
     <h3 class="widget-title m-t-none text-md">当前评论</h3>
     <div>pass</div>
 {% endblock %}
@@ -80,7 +90,25 @@
 {% endblock %}
 
 
-{% block js %}}
+{% block js %}
+    <script>
+        $('#pinglun_tijiao').click(function () {
+            $.ajax({
+                url: '/myblog/pinglun-{{ article_nid.id }}/',
+                type: 'POST',
+                data: {'name': $('#pinglun_name').val(),
+                        'pinglun_cont': $('#pinglun_cont').val(),
+                },
+                headers: {'X-CSRFtoken': $.cookie('csrftoken')},
+                success: function (data) {
+                    var obj = JSON.parse(data);
+                    alert(obj.cont)
+                }
+
+
+            })
+        })
+    </script>
 {% endblock %}
 
 

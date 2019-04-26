@@ -1,4 +1,5 @@
-from django.test import TestCase
+
+# from django.test import TestCase
 
 # Create your tests here.
 
@@ -69,8 +70,8 @@ from django.test import TestCase
 # obj = Aaaa(2)
 # print(obj.bb())
 
-a = [1,2,3]
-b = [4,5,6]
+# a = [1,2,3]
+# b = [4,5,6]
 # print([(i,j) for i in a for j in b])
 # print([i for i in a for j in b])
 # a.append(for i in b])
@@ -79,22 +80,55 @@ b = [4,5,6]
 #     a.append(i)
 # print(a)
 
-def Test(ta, tb, *args):
-    print(a)
-    print(b)
-    at = tuple(a)
-    print(at)
-    bt = tuple(b)
-    # for i in a:
-    #     args.__add__(i)
-    # for i in b:
-    #     args.__add__(i)
-    args.__add__(at)
-    args.__add__(bt)
-    print(at)
-    print(args)
-
-Test(a,b,)
+# def Test(ta, tb, *args):
+#     print(a)
+#     print(b)
+#     at = tuple(a)
+#     print(at)
+#     bt = tuple(b)
+#     # for i in a:
+#     #     args.__add__(i)
+#     # for i in b:
+#     #     args.__add__(i)
+#     args.__add__(at)
+#     args.__add__(bt)
+#     print(at)
+#     print(args)
+#
+# Test(a,b,)
 
 # at = tuple(a)
 # print(at)
+
+
+
+def char_m(char):
+    def yanzheng(func):
+        def inner(*args,**kwargs):
+            print(char*10)
+            ret = func(*args,**kwargs)
+            return ret
+        return inner
+    return yanzheng
+
+@char_m('=')
+@char_m('*')
+def cunkuan(a):
+    return a
+
+@char_m('=')
+@char_m('*')
+def qukuan(b):
+    print(b)
+
+# cunkuan = yanzheng(cunkuan)
+# qukuan = yanzheng(qukuan)
+
+
+print(cunkuan('aaa'))
+qukuan('bbb')
+
+
+
+# a = 'aaa-%s' %('b')
+# print(a)

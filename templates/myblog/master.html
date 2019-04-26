@@ -265,8 +265,8 @@
                             <button type="button" id="login_ajax" name="submitLogin" class="btn btn-block btn-primary">
                                 <span class="text">登录</span>
                             </button>
-                            <input type="hidden" name="referer" value="https://ensu.cc"
-                                   data-current-url="value">
+{#                            <input type="hidden" name="referer" value="https://ensu.cc"#}
+{#                                   data-current-url="value">#}
                         </form>
                     </div>
                 </li>
@@ -421,12 +421,16 @@
                                     <h3 class="widget-title m-t-none text-md">热门文章</h3>
                                     <ul class="list-group no-bg no-borders pull-in m-b-none">
                                         <li class="list-group-item">
+
                                             <a href="https://ensu.cc/index.php/archives/262/" class="pull-left thumb-sm m-r">
 {#                                                <img style="height: 40px!important;width: 40px!important;" src="https://ensu.cc/usr/themes/handsome/usr/img/sj2/2.jpg" class="img-circle">#}
+
+                                            <a href="#" class="pull-left thumb-sm m-r">
+                                                <!--<img style="height: 40px!important;width: 40px!important;" src="#" class="img-circle">-->
                                             </a>
                                             <div class="clear">
                                                 <h4 class="h5 l-h">
-                                                    <a href="https://ensu.cc/index.php/archives/262/" title="免费申请中国移动CMLink英国电话卡及破解最小充值限制">免费申请中国移动CMLink英国电话卡及破解最小充值限制 </a>
+                                                    <a href="#" title="免费申请中国移动CMLink英国电话卡及破解最小充值限制">免费申请中国移动CMLink英国电话卡及破解最小充值限制 </a>
                                                 </h4>
                                                 <small class="text-muted post-head-icon">
                                                     <span class="meta-views">
@@ -441,7 +445,7 @@
                                 </div>
                                 <!--最新评论-->
                                 <div id="widget-tabs-4-comments" class="tab-pane fade wrapper-md no-js-show" role="tabpanel">
-                                    {% block pinglin %}
+                                    {% block pinglun %}
                                     {% endblock %}
 {#                                    <ul class="list-group no-borders pull-in auto m-b-none no-bg">#}
 {#                                        <li class="list-group-item">#}
@@ -469,12 +473,16 @@
                                     <h3 class="widget-title m-t-none text-md">随机文章</h3>
                                     <ul class="list-group no-bg no-borders pull-in">
                                         <li class="list-group-item">
+
                                             <a href="https://ensu.cc/index.php/archives/316/" class="pull-left thumb-sm m-r">
 {#                                                <img style="height: 40px!important;width: 40px!important;" src="https://ensu.cc/usr/themes/handsome/usr/img/sj2/2.jpg" class="img-circle">#}
+                                            <a href="#" class="pull-left thumb-sm m-r">
+                                                <!--<img style="height: 40px!important;width: 40px!important;" src="https://ensu.cc/usr/themes/handsome/usr/img/sj2/2.jpg" class="img-circle">-->
+
                                             </a>
                                             <div class="clear">
                                                 <h4 class="h5 l-h">
-                                                    <a href="https://ensu.cc/index.php/archives/316/" title="高质量视频压缩工具 - 小丸工具箱"> 高质量视频压缩工具 - 小丸工具箱 </a>
+                                                    <a href="#" title="高质量视频压缩工具 - 小丸工具箱"> 高质量视频压缩工具 - 小丸工具箱 </a>
                                                 </h4>
                                                 <small class="text-muted post-head-icon">
                                                     <span class="meta-views">
@@ -495,19 +503,19 @@
                             <ul class="list-group">
                                 <li class="list-group-item">
                                     <i class="glyphicon glyphicon-file text-muted"></i>
-                                    <span class="badgepull-right">179</span>文章数目
+                                    <span class="badgepull-right">pass</span>文章数目
                                 </li>
                                 <li class="list-group-item">
                                     <i class="glyphicon glyphicon-comment text-muted"></i>
-                                    <span class="badgepull-right">29</span>评论数目
+                                    <span class="badgepull-right">pass</span>评论数目
                                 </li>
                                 <li class="list-group-item">
                                     <i class="glyphicon glyphicon-equalizer text-muted"></i>
-                                    <span class="badgepull-right">253天</span>运行天数
+                                    <span class="badgepull-right">pass天</span>运行天数
                                 </li>
                                 <li class="list-group-item">
                                     <i class="glyphicon glyphicon-refresh text-muted"></i>
-                                    <span class="badgepull-right">2 星期前</span>最后更新
+                                    <span class="badgepull-right">pass前</span>最后更新
                                 </li>
                             </ul>
                         </section>
@@ -528,7 +536,7 @@
     </div><!-- /content -->
     <footer id="footer" class="app-footer" role="footer">
         <div class="topButton panel panel-default">
-            <button id="goToTop" class="btn btn-default no-shadow pos-abt">
+            <button id="goToTop" class="btn btn-default no-shadow pos-abt hide">
                 <i class="glyphicon glyphicon-eject" aria-hidden="true"></i>
             </button>
         </div>

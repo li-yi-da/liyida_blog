@@ -16,4 +16,5 @@ urlpatterns = [
     re_path('classify_admin-(\d+)/', views.classify_admin),
     re_path('detail-(\d+)/', views.detail),
     re_path('edit-(\d+)/', views.edit),             #通过正则接受并传递数据  views函数内要设置参数接受
+    re_path('pinglun-(\d+)/', views.pinglun),
 ]

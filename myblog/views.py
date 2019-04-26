@@ -1,5 +1,7 @@
 from django.shortcuts import render,HttpResponse,redirect
 from myblog import models
+from django.utils.safestring import mark_safe
+import json
 from django.contrib.sessions.backends.db import SessionStore
 # Create your views here.
 
@@ -32,55 +34,11 @@ class Page():
         p_b_s = []  # 分页列表
         for i in range(1, self.c + 1):
             if i == self.p:
-                item = '<a href="/myblog/%s/?p=%s" style="color: red">%s</a>' % (self.d, i, i)
+                # item = '<a href="/myblog/%s/?p=%s" style="color: red">%s</a>' % (self.d, i, i)
+                item = '<a href="/myblog/%s/?p=%s" style="color: #a0a0a0;background-color: black;">%s</a>' % (self.d, i, i)
             else:
-                item = '<a href="/myblog/%s/?p=%s">%s</a>' % (self.d, i, i)
-            item = mark_safe(item)  # 把item变成被前端承认的合法字符
-            p_b_s.append(item)
-        if 1 <= self.p <= self.c:
-            if 1 <= self.p <= 5:
-                p_b = p_b_s[0:5]
-            elif self.c - 5 < self.p <= self.c:
-                p_b = p_b_s[self.c - 5:]
-            else:
-                p_b = p_b_s[self.p - 3:self.p + 2]
-        else:
-            p_b = []
-        return p_b
-
-
-
-#分类的分页
-class Page_classify():
-    def __init__(self, article_list, page_cont, p, nid, d):
-        self.article_list = article_list
-        self.page_cont = int(page_cont)
-        self.p = int(p)
-        self.nid = nid
-        self.d = d
-        c_p = len(self.article_list)
-        c, y = divmod(c_p, self.page_cont)  # c_p除以10，把商和余数已元祖返回
-        if y:
-            c += 1  # c为一共能分成多少页
-        self.c = c
-
-    def c_d(self):
-        return self.c
-
-    def page_fen_d(self):
-        if 1 <= self.p <= self.c:
-            page_fen = self.article_list[(self.p - 1) * self.page_cont: self.p * self.page_cont]  # 一页要显示self.page_cont篇文章
-        else:
-            page_fen = []
-        return page_fen
-
-    def p_b_d(self):
-        p_b_s = []  # 分页列表
-        for i in range(1, self.c + 1):
-            if i == self.p:
-                item = '<a href="/myblog/%s-%s/?p=%s" style="color: red">第%s页</a>' % (self.d, self.nid, i, i)
-            else:
-                item = '<a href="/myblog/%s-%s/?p=%s">第%s页</a>' % (self.d, self.nid, i, i)
+                # item = '<a href="/myblog/%s/?p=%s">%s</a>' % (self.d, i, i)
+                item = '<a href="/myblog/%s/?p=%s" style="color: #00a0e9">%s</a>' % (self.d, i, i)
             item = mark_safe(item)  # 把item变成被前端承认的合法字符
             p_b_s.append(item)
         if 1 <= self.p <= self.c:
@@ -97,16 +55,16 @@ class Page_classify():
 
 
 #获取文章
-from django.utils.safestring import mark_safe
 def index(request):
     user_name = ''
     if request.method == 'GET':
         if request.session.get('login_state',None):
             user_name = request.session['username']
             # user_name = request.COOKIES.get('username')
+        # print(request.path)
         classify_m = models.Classify.objects.all()
-        article_m = models.Article.objects.all()
         label_m = models.Label.objects.all()
+        article_m = models.Article.objects.all()
         p = request.GET.get('p', 1)   # 1是默认值
         p = int(p)
         page_m = Page(article_m, 6, p, 'index')
@@ -137,14 +95,14 @@ def index(request):
             else:
                 return HttpResponse('<h2 style="margin:100px auto;text-align: center;">输入的页数有误请返回</h2>')
         return render(request,'myblog/index.html',{'classify_m':classify_m,
-                                                   'label_m':label_m,
-                                                   'user_name': user_name,
-                                                   'page_fen': page_fen,
-                                                   'p_b': p_b,
-                                                   'previous_page': previous_page,
-                                                   'next_page': next_page,
-                                                   'c': c,
-                                                   })
+                                                      'label_m':label_m,
+                                                      'user_name': user_name,
+                                                      'page_fen': page_fen,
+                                                      'p_b': p_b,
+                                                      'previous_page': previous_page,
+                                                      'next_page': next_page,
+                                                      'c': c,
+                                                      })
 
 
 
@@ -159,7 +117,8 @@ def classify(request,nid):
         classify_list = models.Article.objects.filter(classify_id=nid)
         p = request.GET.get('p', 1)  # 1是默认值
         p = int(p)
-        page_m = Page_classify(classify_list, 6, p, nid, 'classify')
+        cla = 'classify-%s' %(nid)
+        page_m = Page(classify_list, 6, p, cla)
         c = page_m.c_d()
         if c == 0:
             page_fen = page_m.page_fen_d()
@@ -226,7 +185,8 @@ def label(request,nid):
         label_now = models.Label.objects.get(id=nid)
         p = request.GET.get('p', 1)  # 1是默认值
         p = int(p)
-        page_m = Page_classify(label_list, 6, p, nid, 'label')
+        lab = 'label-%s' %(nid)
+        page_m = Page(label_list, 6, p, lab)
         c = page_m.c_d()
         if c == 0:
             page_fen = page_m.page_fen_d()
@@ -277,6 +237,10 @@ def detail(request,nid):
     if request.method == 'GET':
         if request.session.get('login_state',None):
             user_name = request.session['username']
+        liulang = models.Article.objects.filter(id=nid).values('liulangliang').first()
+        liulang = int(liulang['liulangliang'])
+        liulang = liulang + 1
+        models.Article.objects.filter(id=nid).update(liulangliang=liulang)
         label_m = models.Label.objects.all()
         classify_m = models.Classify.objects.all()
         article_nid = models.Article.objects.filter(id=nid).first()
@@ -286,6 +250,19 @@ def detail(request,nid):
                                                       'article_nid':article_nid,
                                                       })
 
+
+
+#评论
+def pinglun(request,nid):
+    if request.method == 'POST':
+        name = request.POST.get('name','神秘人')
+        cont = request.POST.get('pinglun_cont',None)
+        if 0 < len(cont) <128 :
+            models.Pinglun.objects.create(name=name,cont=cont,arti_id=int(nid))
+            return HttpResponse(json.dumps({'cont':cont}))
+            # return redirect('%s' %(request.path))
+        else:
+            return HttpResponse('nonoooononon')
 
 
 #管理后台
@@ -353,7 +330,8 @@ def classify_admin(request,nid):
             label_m = models.Label.objects.all()
             p = request.GET.get('p', 1)  # 1是默认值
             p = int(p)
-            page_m = Page_classify(classify_list, 6, p, nid, 'classify_admin')
+            cla = 'classify_admin-%s' %(nid)
+            page_m = Page(classify_list, 6, p, cla)
             c = page_m.c_d()
             if c == 0:
                 page_fen = page_m.page_fen_d()
@@ -409,7 +387,8 @@ def label_admin(request,nid):
             label_now = models.Label.objects.get(id=nid)
             p = request.GET.get('p', 1)  # 1是默认值
             p = int(p)
-            page_m = Page_classify(article_label, 6, p, nid, 'label_admin')
+            lab = 'label_admin-%s' %(nid)
+            page_m = Page(article_label, 6, p, lab)
             c = page_m.c_d()
             if c == 0:
                 page_fen = page_m.page_fen_d()
@@ -644,7 +623,6 @@ def login(request):
 
 
 
-import json
 def login_ajax(request):
     data_json = {'alt': True, 'errormes': None, 'data_m': None, }
     if request.method == 'POST':

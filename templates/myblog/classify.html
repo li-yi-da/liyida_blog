@@ -46,7 +46,8 @@
                         <div class="text-muted post-item-foot-icon">
                             <i class="glyphicon glyphicon-user"></i><span class="m-r-sm">&nbsp;<a href="/myblog/index/">昵称&nbsp;</a></span>
                             <i class="glyphicon glyphicon-time"></i><span class="m-r-sm">&nbsp;{{ i.addtime|date:"Y-m-d" }}</span>
-                            <a href="https://ensu.cc/index.php/archives/443/#comments" class="m-l-sm post-item-comment"><i class="glyphicon glyphicon-comment"></i>&nbsp;暂无评论</a>
+                            <i class="glyphicon glyphicon-eye-open"></i><span class="m-r-sm">&nbsp;{{ i.liulangliang }}&nbsp浏览量</span>
+                            <a href="#" class="m-l-sm post-item-comment"><i class="glyphicon glyphicon-comment"></i>&nbsp;暂无评论</a>
                         </div>
                         <!--text-muted-->
                     </div><!--post-meta wrapper-lg-->
@@ -64,7 +65,8 @@
                         </li>
                         <li>
                             {% for i in p_b %}
-                            <span style="color: #00a0e9">{{ i }}</span>
+{#                            <span style="color: #00a0e9">{{ i }}</span>#}
+                                {{ i }}
                             {% endfor %}
                         </li>
                         <li>
@@ -95,7 +97,7 @@
 {% endblock %}
 
 
-{% block pinglin %}
+{% block pinglun %}
     <h3 class="widget-title m-t-none text-md">最新评论</h3>
     <div>pass</div>
 {% endblock %}

@@ -10,6 +10,7 @@ class Article(models.Model):
     updatatime = models.DateField(auto_now=True)
     classify = models.ForeignKey('Classify',to_field='id',on_delete=models.CASCADE,)
     label = models.ManyToManyField('Label')
+    liulangliang = models.IntegerField(default=0)
 
 #创建分类表
 class Classify(models.Model):
@@ -25,3 +26,10 @@ class Label(models.Model):
 class User(models.Model):
     user = models.CharField(max_length=32)
     password = models.CharField(max_length=32)
+
+#评论
+class Pinglun(models.Model):
+    name = models.CharField(max_length=16)
+    cont = models.CharField(max_length=128)
+    addtime = models.DateTimeField(auto_now_add=True)
+    arti = models.ForeignKey('Article',to_field='id',on_delete=models.CASCADE,)
